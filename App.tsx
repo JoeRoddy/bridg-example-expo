@@ -1,10 +1,15 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
+import { useAsync } from './hooks/useAsync';
 
 export default function App() {
+  const [data] = useAsync(() => fetch(`/.netlify/functions/hello`).then((r) => r.json()));
+
+  console.log('data:', data);
+
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
+      <Text>{JSON.stringify(data, null, 1)}</Text>
       <StatusBar style="auto" />
     </View>
   );
