@@ -1,4 +1,4 @@
-# Bridg - Serverless create-react-app + Netlify
+# Bridg - Serverless React Native (Expo) + Netlify
 
 This repo is an example of Bridg being used in a serverless capacity, with a static client via create-react-app, and a single Netlify cloud function for handling requests from Bridg.
 
