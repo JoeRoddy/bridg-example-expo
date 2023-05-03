@@ -7,7 +7,9 @@
     "start": "expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
-    "web": "expo start --web"
+    "web": "expo start --web",
+    "postinstall": "yarn generate",
+    "generate": "npx prisma generate && npm explore bridg -- \"node ./dist/generator/index.js ../../prisma/schema.prisma --outDir ./tmp --api /.netlify/functions/bridg && npm run build-client\""
   },
   "prisma": {
     "seed": "node ./prisma/seed.ts"
